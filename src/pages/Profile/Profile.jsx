@@ -3,16 +3,20 @@ import './profile.css';
 import Navbar from "../../components/Navbar/Navbar";
 import axios from 'axios';
 import Book2 from '../../components/BookList/Bookk';
-
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 export default function Profile() {
 
+  const navigate = useNavigate();
     // const current_ID = JSON.parse(localStorage.getItem('id'));
-    const current_ID = 1;
     // const user_email = localStorage.getItem('email');
 
     const [dataUsers,setDataUsers] = useState([]);
 
+    const admin=useSelector(state=>state.login.admin);
+    
+    const current_ID = admin;
     useEffect(()=>{
         getDataUsers();
        

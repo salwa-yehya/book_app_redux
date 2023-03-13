@@ -1,11 +1,12 @@
 <?php
-require "config.php";
+require "./config.php";
 
 header("Access-Control-Allow-Origin: *");
 header("Access-Control-Allow-Methods:*");
 
-
-    $email =  $_REQUEST['email'];
+    $object = new crud;
+    $conn = $object->connect();
+    $email =  $_REQUEST['id'];
     $password = $_REQUEST['password'];
 
 

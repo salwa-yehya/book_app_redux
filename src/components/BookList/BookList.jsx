@@ -6,32 +6,44 @@ import coverImg from "../../images/cover_not_found.jpg";
 import "./BookList.css";
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import Header from '../Header/Header';
+import { useSelector } from 'react-redux';
 
 
 const BookList = () => {
   const[Books,setBooks]=useState([]);
+  const admin=useSelector(state=>state.login.admin);
+
+
+
+
+ 
 
   useEffect(()=>{
     getBooks();
+    console.log(admin);
+        },[])
 
-          },[])
-
-          const getBooks =()=>{
-        
-            axios.get("http://localhost/REACT_REDUX/book_app_redux/back_end/books.php")
-          
-            .then((res)=>{
-                console.log(res.data)
-                setBooks(res.data)
-            })
+      const getBooks =()=>{
+    
+        axios.get("http://localhost/REACT_REDUX/book_app_redux/back_end/books.php")
+      
+        .then((res)=>{
+            console.log(res.data)
+            setBooks(res.data)
+        })
        } 
 
+  // const booksWithCovers = books.map((singleBook) => {
+  //   return {
+  //     ...singleBook,
+  //     id: (singleBook.id).replace("/works/", ""),
+  //     cover_img: singleBook.cover_id ? `https://covers.openlibrary.org/b/id/${singleBook.cover_id}-L.jpg` : coverImg
+  //   }
+  // });
+
+  // if(loading) return <Loading />;
 
   return (
-    
-  
-
     <section className='booklist'>
       <div className='container'>
         <div className='section-title'>
@@ -39,18 +51,27 @@ const BookList = () => {
           
           <div style={{display:'flex',justifyContent:'space-around'}}>
             <h2  style={{marginTop:'-19px'}}>All Books</h2>
-            <Link to="/createBook">
-                <button className='btn' style={{backgroundColor:"#FA8F8D", border:"none" , width:"150px" , height:"45px" , fontSize:"15px"}}>Add book</button>
-            </Link>
+
+
+
+
+              {admin !== '' ?
+
+                  <Link to="/createBook">
+                      <button className='btn'>Add book</button>
+                  </Link> 
+                  : " "
+}
+              
+
           </div>
         </div>
-        <br />
         <div className='booklist-content grid'>
-        {(Books == []) ?
+        {(Books === []) ?
                   <></>
                   :
                   Books.map((book) =>(
-                    <Book key = {book.id} Books ={book} />
+                    <Book   key = {book.id} Books ={book} />
                     ))}
         
                 {/* <Book /> */}

@@ -1,34 +1,29 @@
 import React , {useState}from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Img from "../../images/book-1.png";
 
 import {useSelector,useDispatch } from 'react-redux';
 import {login} from "../../redux/action/index";
-import Navbar from "../../components/Navbar/Navbar";
-import "./login.css";
-// import 'bootstrap/dist/css/bootstrap.min.css';
-
-
-
-
-
+ import "./login.css";
 export default function Login() {
 
   const dispatch=useDispatch();
+  const nanigate = useNavigate();
   const admin=useSelector(state=>state.login.admin);
   const error=useSelector(state=>state.login.error);
 
-      if(admin !== ''){
-          window.location.href = "/book";
+     
+      if(admin.length !== 0){
+        console.log(true);
+          nanigate('/book');
       }
-  
-    
+
+
   const[email,setEmail]=useState('');
   const[password,setPassword]=useState('');
-
 const LoginFun=(e)=>{
   e.preventDefault();
-  dispatch(login(email,password))
+  dispatch(login(email,password));
 }
 
   return (
@@ -52,7 +47,10 @@ const LoginFun=(e)=>{
                   type="password"
                   placeholder="Enter password"
                   onChange={(e)=>setPassword(e.target.value)}/>
-               
+               <p id="p1" />
+              </div>
+              <div id='errorr'>
+                  <span>{error}</span>
               </div>
               <button id="inputButtonLogin" type="button"
                 defaultValue="login"

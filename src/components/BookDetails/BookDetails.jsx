@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import Loading from "../Loader/Loader";
 import coverImg from "../../images/cover_not_found.jpg";
@@ -11,6 +12,8 @@ import axios from 'axios';
 
 const BookDetails = () => {
   const {id} = useParams();
+  const admin=useSelector(state=>state.login.admin);
+
   // const [loading, setLoading] = useState(false);
   const [book, setBook] = useState([]);
   const navigate = useNavigate();
@@ -73,6 +76,7 @@ const deleteBook = (id) => {
               <span className='fw-6'>Description: </span>
               <span className='text-italic'>{book?.description}</span>
             </div>
+            {book.user_id === admin ?
             <div className='book-details-item' style={{display:"flex" , gap:"5px"}}>
               <div>
 
@@ -90,6 +94,7 @@ const deleteBook = (id) => {
 
               </div>
             </div>
+              : ""  }
           </div>
         </div>
       </div>

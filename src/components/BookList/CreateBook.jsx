@@ -2,6 +2,8 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Img from "../../images/book-1.png";
+import { useSelector } from 'react-redux';
+
 
 import "./creatBook.css";
 
@@ -9,12 +11,14 @@ export default function CreateBook() {
 
         // const current_ID = JSON.parse(localStorage.getItem('id'));
 
-        const current_ID = 1 ;
-const navigate = useNavigate();
-    const [title, setTitle] = useState("");
-    const [auther, setAuther] = useState("");
-    const [description, setDescription] = useState("");
-    const [file, setFile] = useState(null);
+        const admin=useSelector(state=>state.login.admin);
+
+        const current_ID = admin ;
+        const navigate = useNavigate();
+        const [title, setTitle] = useState("");
+        const [auther, setAuther] = useState("");
+        const [description, setDescription] = useState("");
+        const [file, setFile] = useState(null);
 
 const handleSubmit = async (e) => {
     e.preventDefault();

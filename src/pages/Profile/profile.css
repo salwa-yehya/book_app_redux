@@ -34,6 +34,7 @@ body{
 
 .wrapper .left h4{
   margin-bottom: 10px;
+  font-size: 30px;
 }
 
 .wrapper .left p{
@@ -81,7 +82,7 @@ body{
 
 .wrapper .right .info_data .data p,
 .wrapper .right .projects_data .data p{
-  font-size: 13px;
+  font-size: 17px;
   margin-bottom: 10px;
   color: #919aa3;
 }
@@ -92,13 +93,11 @@ body{
 
 .wrapper .social_media ul li{
   width: 120px;
-  height: 40px;
+  height: 30px;
   background-color: #EC8D95;
-  margin-right: 10px;
   border-radius: 5px;
   text-align: center;
-  font-size: 12px;
-  line-height: 40px;
+  font-size: 10px;
 }
 
 .wrapper .social_media ul li a{

@@ -1,5 +1,8 @@
 import React from "react";
 import Navbar from "../../components/Navbar/Navbar";
+import Img from "../../images/book-1.png";
+import { Link } from 'react-router-dom';
+
 import "./register.css";
 import { Component } from 'react';
 import axios from "axios";
@@ -174,38 +177,37 @@ const checkPass=RegExp(/^^[A-Za-z]\w{8,31}$/);
   return (
     <div className="holder">
       <header className="header">
-        <Navbar />
+        {/* <Navbar /> */}
 
         <div className="body">
-          <form id="form"  method="POST" onSubmit={this.handleSubmit} noValidate>
-            <h2 id="h2">Register</h2>
+        <div>
+            <img src={Img} style={{marginRight:'5rem'}}  alt='boookhub' className='img'/>
 
-            <div className="qqq">
+            </div>
+          <form id="form"  method="POST" onSubmit={this.handleSubmit} noValidate>
+            <h2 id="title-login">Sign Up</h2>
+            <p className="para-login">Sign Up to join the world’s largest <br></br>community of readers.</p>
+<div>
               <input id="input"type='text' name='name' onChange={this.handleChange} noValidate placeholder="Your Name" />
               {errors.name.length > 0 && this.state.accept &&  <p id="p1">{errors.name}</p>}
             </div>
-
-            <div className="qqq">
+<div>
               <input id="input" type="email" name='email' onChange={this.handleChange} noValidate placeholder="Your email" />
               {errors.email.length > 0 && this.state.accept &&  <p id="p1">{errors.email}</p>}
             </div>
-
-            <div className="qqq">
+<div>
               <input id="input" type="text"  name='phone' onChange={this.handleChange} noValidate placeholder="Your phone" />
               {errors.phone.length > 0 && this.state.accept &&  <p id="p1">{errors.phone}</p>}
             </div>
-
-            <div className="qqq">
+<div>
               <input id="input" type="password" name="password" onChange={this.handleChange} noValidate  placeholder="Enter password" />
               {errors.password.length > 0 && this.state.accept &&  <p id="p1">{errors.password}</p>}
             </div>
 
-            <div className="qqq">
-              <input id="input" type="password" name='repassword' onChange={this.handleChange} noValidate placeholder="Enter repassword" />
-              {errors.repassword.length > 0 && this.state.accept &&  <p id="p1">{errors.repassword}</p>}
-            </div>
 
-            <input id="inputButtonRegister" type="submit" defaultValue="Register"/>
+            <input id="inputButtonLogin" type="submit" defaultValue="Register"/>
+            <span className="dark-color d-inline-block line-height-2 para2-login " style={{marginTop:"1px"}}>Already Have Account ? <Link to={'/login'}> Log in</Link></span>
+
           </form>
         </div>
       </header>

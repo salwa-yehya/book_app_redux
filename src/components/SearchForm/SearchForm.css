@@ -5,14 +5,19 @@
 .search-form-elem{
     padding: 1.4rem 2.8rem;
     border-radius: 3.8rem;
+    height: 50px;
+    background-color: rgba(240, 248, 255, 0.507);
 }
-.search-form-elem .form-control{
-    font-size: 2rem;
+.search-form-elem .form-control {
+    font-size: 1.5rem;
     padding: 0.6rem;
+    background-color: #fff0;
 }
 .search-form-elem .form-control::placeholder{
-    opacity: 0.9;
+    /* opacity: 0.9; */
+    color: #000;
 }
 .icon{
-    color: brown;
+    color: #000;
+    font-size: 1rem;
 }

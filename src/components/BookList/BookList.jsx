@@ -40,7 +40,7 @@ const BookList = () => {
           <div style={{display:'flex',justifyContent:'space-around'}}>
             <h2  style={{marginTop:'-19px'}}>All Books</h2>
             <Link to="/createBook">
-                <button className='btn'>Add book</button>
+                <button className='btn' style={{backgroundColor:"#FA8F8D", border:"none"}}>Add book</button>
             </Link>
           </div>
         </div>

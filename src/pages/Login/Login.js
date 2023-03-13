@@ -1,5 +1,6 @@
 import React , {useState}from 'react';
 import { Link } from 'react-router-dom';
+import Img from "../../images/book-1.png";
 
 import {useSelector,useDispatch } from 'react-redux';
 import {login} from "../../redux/action/index";
@@ -18,7 +19,7 @@ export default function Login() {
   const error=useSelector(state=>state.login.error);
 
       if(admin !== ''){
-          window.location.href = "/";
+          window.location.href = "/book";
       }
   
     
@@ -33,32 +34,39 @@ const LoginFun=(e)=>{
   return (
     <div className="holder">
       <header className="header">
-        <Navbar />
-        {/* ________________________________________ */}
+        {/* <Navbar /> */}
         
-          <div className="body">
-            <form id="form">
-              <h2 id="h2">login</h2>
-              <div className="qqq">
+          <div className="body" >
+            <form id="form" className='mt-4'>
+              <h2 id="title-login">Sign in</h2>
+              <p className="para-login">Welcome Our favorite reader.<br></br>Nice to see you again</p>
+
+              <div>
                 <input id="input" type="text" placeholder="Your email" onChange={(e)=>setEmail(e.target.value)} />
-                <p id="p1" />
+           
+
               </div>
-              <div className="qqq">
+              <div >
                 <input
                   id="input"
                   type="password"
                   placeholder="Enter password"
-                  onChange={(e)=>setEmail(e.target.value)}/>
-                <p id="p1" />
+                  onChange={(e)=>setPassword(e.target.value)}/>
+               
               </div>
-              <input
-                id="inputButtonLogin"
-                type="button"
+              <button id="inputButtonLogin" type="button"
                 defaultValue="login"
-                onClick={(e)=> LoginFun(e)}/>
+                onClick={(e)=> LoginFun(e)}>login
+               </button>
+                
+               <span className="dark-color d-inline-block line-height-2 para2-login">Don't Have Account ?<Link to={'/register'}> register now</Link></span>
+
             </form>
+            <div>
+            <img src={Img} style={{marginLeft:'4rem'}}  alt='boookhub' className='img'/>
+
+            </div>
           </div>
-        {/* ________________________________________ */}
 
       </header>
     </div>

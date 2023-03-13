@@ -2,23 +2,46 @@
   padding: 0;
   margin: 0;
   font-family: sans-serif;
-  background: url("/src/pages/Login/login.jpg");
+  /* background: url("/src/pages/Login/login.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
+  background-color: #fff;
   width: 100%;
-  height: 88vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
 }
 
+#title-login{
+  color: #232222;
+  font-family: monospace;
+  font-size: 3rem;
+  margin-top: 4rem;
+  margin-bottom: -0.5rem;
+}
+.para-login{
+  color: #545353;
+  font-family: monospace;
+  font-size: 1.5rem;
+  text-align: center;
 
+}
+.para2-login{
+  color: #545353;
+  font-family: monospace;
+  font-size: 1.5rem;
+  margin-top: -30px;
+
+}
 #form {
 
-  width: 39rem;
-  height: 75vh;
-  background: rgba(0, 0, 0, 0.8);
+  width: 35rem;
+  height: 80vh;
+  /* background: rgba(0, 0, 0, 0.8); */
+  border: 1px solid black;
+
   border-radius: 1em;
   box-sizing: border-box;
   display: grid;
@@ -28,60 +51,40 @@
 
 }
 
-#h2 {
-
-  color: #fff;
-  text-align: center;
-  margin-top: 1.5em;
-    font-size: 2em;
-
-}
-
-
 #input {
-
-  border: none;
-  width: 99%;
-  height: 2em;
-  border-bottom: 0.1em solid#ffc800;
-  background: none;
-  padding: 0.8em;
-  color: #ffffff;
+  height: 40px;
+  width: 300px;
+  margin: -10px;
+  border: 1px solid #EC8D95 ;
+  border-radius: 4px;
+  border-color: #ffdde0 !important;
+ background-color: #fef4f5 !important;
 }
 
-#p1 {
-  color: #ff0000;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
 
-#p2 {
 
-  height: 2em;
-
-  background: none;
-  padding: 0.6em;
-  color: #fff;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
-.qqq {
-  width: 75%;
-}
-
-#inputButtonRegister {
+#inputButtonLogin {
 
   width: 10.1em;
   height: 3.18em;
-  background: #ffc800;
+  background:  #FA8F8D;
   border: none;
   color: #fff;
   border-radius: 0.9em;
   font-size: .9em;
+  letter-spacing: 2px;
+  font-weight: 600;
+
 }
 
-#inputButtonRegister:hover {
-  background: #fff;
-  color: #ffc800;
+#inputButtonLogin:hover {
+  background-color:#EC8D95 !important;
+  color: #fff;
   cursor: pointer;
 
+}
+#p1{
+  color: red;
+  font-size: 1.5rem;
+  margin-top: 3px;
 }

@@ -15,12 +15,21 @@ export default function Profile() {
     const [dataUsers,setDataUsers] = useState([]);
 
     const admin=useSelector(state=>state.login.admin);
-    
+
     const current_ID = admin;
+
     useEffect(()=>{
-        getDataUsers();
-       
+       getDataUsers();
+      checkLogin();
     },[]);
+
+    const checkLogin = () =>{
+      if (admin === ''){
+
+        navigate('/login')
+
+      }
+    }
     const[Books,setBooks]=useState([]);
 
     useEffect(()=>{
@@ -77,8 +86,8 @@ return <div key={index}>
           </div>
           <div className="social_media">
             <ul>
-              <li><a href={`/profile/${users.id}/edit`} >Edit Profile</a></li>
-          
+            <li><Link to={`/profile/${users.id}/edit`}><i />Edit Profile</Link></li>
+
             </ul>
           </div>
           <br />
@@ -89,7 +98,7 @@ return <div key={index}>
             <div className="projects_data">
               <div className="data">
                 
-                 <div className='booklist-content1 '>
+                 <div className='booklist-content1 grid'>
                   {(Books == []) ?
                   <></>
                   :

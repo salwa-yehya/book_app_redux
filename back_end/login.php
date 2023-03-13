@@ -6,7 +6,8 @@ header("Access-Control-Allow-Methods:*");
 
     $object = new crud;
     $conn = $object->connect();
-    $email =  $_REQUEST['id'];
+ 
+    $email =  $_REQUEST['email'];
     $password = $_REQUEST['password'];
 
 
@@ -19,6 +20,6 @@ header("Access-Control-Allow-Methods:*");
         die($error->getMessage());
     }
      while ($row = $stmt->fetch()): 
-            echo $row['email'];
-     endwhile; 
+        echo $row['id'];
+    endwhile; 
      ?>

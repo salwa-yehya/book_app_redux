@@ -28,6 +28,7 @@ export default function EditProfile() {
         })
     }
     const handleEditUser = (e) => {
+      e.preventDefault();
         const name = e.target.name;
         const value = e.target.value;
         setInputs( {...inputs , [name]: value})
@@ -76,8 +77,11 @@ export default function EditProfile() {
       <input  type="password"  placeholder="Email" name="password" defaultValue={user.password} onChange={handleEditUser} />
       <br/>
       <input type="file" style={{border:'none',borderRadius:'0'}}  placeholder="image"   name="file" id="file"onChange={(e) => setFile(e.target.files[0])}/>
+      <div className='btn-flex'> 
       <button type='submit'>Submit</button>
       <button type='submit' > <Link to={'/account'}>Back</Link></button>
+      </div>
+     
     </form>
 </div>
      </div>    

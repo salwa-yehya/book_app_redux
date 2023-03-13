@@ -58,13 +58,14 @@ const BookList = () => {
               {admin !== '' ?
 
                   <Link to="/createBook">
-                      <button className='btn'>Add book</button>
+                      <button className='btn' style={{width:'130px' , height:"40px" , backgroundColor:"#EC8D95" , border:"none" , fontSize:"15px"}}>Add book</button>
                   </Link> 
                   : " "
 }
               
 
           </div>
+          <br />
         </div>
         <div className='booklist-content grid'>
         {(Books === []) ?

@@ -35,8 +35,9 @@ export const getUsers = () => async dispatch => {
     }
 
 }
-export const logout =()=>{
-    window.location.href = "/";
+export const logout =(e)=>{
+    e.preventDefault();
+    window.location.href = "/login";
     return{
         type:'logout'
     }

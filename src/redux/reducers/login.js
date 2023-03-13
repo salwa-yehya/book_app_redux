@@ -6,8 +6,8 @@ const initialState = {
     error:''
 }
 
-export default function(state = initialState, action){
-    switch(action.type){
+export default function loginReducer(state = initialState, action){   
+     switch(action.type){
         case GET_ADMIN:
             if(action.payload !== ''){
                 return{...state,

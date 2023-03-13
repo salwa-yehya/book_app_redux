@@ -72,10 +72,6 @@ body{
   justify-content: center;
 }
 
-.wrapper .right .info_data .data,
-.wrapper .right .projects_data .data{
-  width: 45%;
-}
 
 .wrapper .right .info_data .data h4,
 .wrapper .right .projects_data .data h4{
@@ -96,13 +92,13 @@ body{
 
 .wrapper .social_media ul li{
   width: 120px;
-  height: 45px;
+  height: 40px;
   background-color: #EC8D95;
   margin-right: 10px;
   border-radius: 5px;
   text-align: center;
-  font-size: 15px;
-  line-height: 45px;
+  font-size: 12px;
+  line-height: 40px;
 }
 
 .wrapper .social_media ul li a{
@@ -116,7 +112,7 @@ body{
 display: grid;
 gap: 3rem;
 grid-template-columns: repeat(2, 1fr);
-
+width: 100%;
 
 }
 
@@ -148,6 +144,7 @@ grid-template-columns: repeat(2, 1fr);
   
   .profileForm input{
     display: block;
+    background-color: #fedcdc !important;
     margin-bottom: 25px;
     width: 90%;
     border-radius: 8px;
@@ -157,13 +154,18 @@ grid-template-columns: repeat(2, 1fr);
   }
   .profileForm button{
     background-color:#EC8D95;
-    width: 45%;
+    width: 30%;
     margin-right: 5px;
     color: #fff;
     font-size: 15px;
     border: none;
     padding: 10px;
     border-radius: 5px;
+  }
+ 
+  .btn-flex {
+    display: flex;
+    justify-content: center;
   }
   .account-block {
     padding: 0;

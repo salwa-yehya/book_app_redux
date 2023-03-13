@@ -3,6 +3,7 @@ import './profile.css';
 import Navbar from "../../components/Navbar/Navbar";
 import axios from 'axios';
 import { useNavigate, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 export default function EditProfile() {
@@ -61,7 +62,7 @@ export default function EditProfile() {
 
 <Navbar />
 
-        
+  <div className='flex-page'>   
 <div className='profileForm'>
     <h1>Edit User Info</h1>
     <form onSubmit={handleEditUserSubmit}>
@@ -76,9 +77,10 @@ export default function EditProfile() {
       <br/>
       <input type="file" style={{border:'none',borderRadius:'0'}}  placeholder="image"   name="file" id="file"onChange={(e) => setFile(e.target.files[0])}/>
       <button type='submit'>Submit</button>
+      <button type='submit' > <Link to={'/account'}>Back</Link></button>
     </form>
-   </div>
-        
+</div>
+     </div>    
         
     </>
   )

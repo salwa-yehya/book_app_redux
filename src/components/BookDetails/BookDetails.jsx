@@ -77,7 +77,7 @@ const deleteBook = (id) => {
               <div>
 
                   <span className='fw-6'>
-                    <button variant="danger" className='btn btn-success'><Link to={`/editBook/${id}`} > </Link>edit</button>
+                    <button variant="danger" className='btn btn-success'><Link to={`/editBook/${id}`}> </Link>edit</button>
                   </span>
 
               </div>

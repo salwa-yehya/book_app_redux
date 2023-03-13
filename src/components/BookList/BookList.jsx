@@ -40,16 +40,17 @@ const BookList = () => {
           <div style={{display:'flex',justifyContent:'space-around'}}>
             <h2  style={{marginTop:'-19px'}}>All Books</h2>
             <Link to="/createBook">
-                <button className='btn' style={{backgroundColor:"#FA8F8D", border:"none"}}>Add book</button>
+                <button className='btn' style={{backgroundColor:"#FA8F8D", border:"none" , width:"150px" , height:"45px" , fontSize:"15px"}}>Add book</button>
             </Link>
           </div>
         </div>
+        <br />
         <div className='booklist-content grid'>
         {(Books == []) ?
                   <></>
                   :
                   Books.map((book) =>(
-                    <Book   key = {book.id} Books ={book} />
+                    <Book key = {book.id} Books ={book} />
                     ))}
         
                 {/* <Book /> */}
